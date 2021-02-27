@@ -1,0 +1,83 @@
+{% extends "BieleGastosApp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+    
+    <h3 align= "center">Dias: </h3>
+    <div align="center">
+        <table id="convenio" title="Convenio" style="text-align: center">
+            <tr>
+                <td>Dia de trabajo: </td>
+                <td>{{ convenio.dia_trabajo }} €</td>
+            </tr>
+            <tr>
+                <td>Viernes Especial: </td>
+                <td>{{ convenio.viernes }} €</td>
+            </tr>
+            <tr>
+                <td>Sabado Medio Dia: </td>
+                <td>{{ convenio.sabado_medio }} €</td>
+            </tr>
+            <tr>
+                <td>Sabado Dia Completo: </td>
+                <td>{{ convenio.sabado_completo }} €</td>
+            </tr>
+            <tr>
+                <td>Domingo Medio Dia: </td>
+                <td>{{ convenio.domingo_medio }} €</td>
+            </tr>
+            <tr>
+                <td>Domingo Dia Completo: </td>
+                <td>{{ convenio.domingo_completo}} €</td>
+            </tr>
+        </table>
+    </div>
+    <p><h3 align= "center">Pluses:</h3></p>
+    <div align= "center">
+        <table id="pluses" title="Pluses" style="text-align: center;">
+            <tr>
+                <td>Plus pernocta dia normal: </td>
+                <td>{{ convenio.pernocta_normal }} €</td>
+            </tr>
+            <tr>
+                <td>Plus pernocta sabado/domingo/festivos: </td>
+                <td>{{ convenio.pernocta_festivo }} €</td>
+            </tr>
+            <tr>
+                <td>A partir de la 3ª semana: </td>
+                <td>{{ convenio.tercera_semana }} €</td>
+            </tr>
+            <tr>
+                <td>Kilometraje: </td>
+                <td>{{ convenio.kilometros }} €/km</td>
+            </tr>
+        </table>
+    </div>
+    <p> <h3 align= "center">Horas Extras:</h3></p>
+    <div align= "center">
+        <table id="extras" title="Horas_Extras" style="text-align: center;">
+            <tr>
+                <td>Normales y Sabados mañana (5 horas): </td>
+                <td>{{ convenio.extra_normal }} €</td>
+            </tr>
+            <tr>
+                <td>Mas de 10 horas y Sabados tarde: </td>
+                <td>{{ convenio.extra_ertain }} €</td>
+            </tr>
+            <tr>
+                <td>Domingo o festivo: </td>
+                <td>{{ convenio.extra_especial }} €</td>
+            </tr>
+            <tr>
+                <td>Horas de Viaje: </td>
+                <td>{{ convenio.horas_viaje }} €</td>
+            </tr>
+        </table>
+    </div>
+    <p> <h3 align= "center">Detalles:</h3></p>
+    <div>  
+        <p>- La tercera semana se cuenta por semana naturales, si se viaja el jueves, hasta el lunes seria semana 1 y apartir de ahí semana 2.</p>
+    </div>
+
+{% endblock %}

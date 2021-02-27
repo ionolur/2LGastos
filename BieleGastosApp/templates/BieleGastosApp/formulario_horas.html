@@ -1,0 +1,32 @@
+{% extends "BieleGastosApp/base.html" %}
+
+{% load static %}
+
+{% block content %} 
+
+    {% if form.error %}
+    <p style="color: red;">Por revisa este campo</p>
+
+    {% endif %}
+    <div align="center">
+        <form action="" method="POST" >
+        
+            <table>
+    
+                {{ form.as_table}}
+    
+            </table>
+            <input type="submit" value="Cargar" name="cargar"> {% csrf_token %}
+            <input type="submit" value="Guardar" name="guardar"> {% csrf_token %}
+            <input type="submit" value="Borrar" name ="borrar"> {% csrf_token %}
+            
+    
+        </form>
+
+    </div>
+
+    
+    
+    
+
+{% endblock %}

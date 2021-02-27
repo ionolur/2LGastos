@@ -1,0 +1,87 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <!--
+    Modified from the Debian original for Ubuntu
+    Last updated: 2016-11-16
+    See: https://launchpad.net/bugs/1288690
+  -->
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'BieleGastosApp/css/nav.css' %}">
+    <!--
+    <style type="text/css" media="screen">
+  	* {
+    	margin: 0px 0px 0px 0px;
+    	padding: 1px 1px 1px 1px;
+  	}
+
+     body {
+    	margin: 0 0 55px 0;
+    	background: #f2f2f2;
+    
+    } 
+    -->
+    </style>
+    <title> 2L Gastos </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+    <body>
+		<header>
+            <div>
+                 <table class="header_table" width ="100%">
+				    <tr>
+                        <td><img src="{% static 'BieleGastosApp/img/Logo_Co.png' %}" class="logo_co"></td>
+                        <td colspan="2"> <h2>2L HORAS </h2> </td>
+                    </tr>
+                    <tr>
+                        <td><i class="material-icons nav__icon"> person </i>{{user.get_full_name}}</td>
+                    </tr>
+
+                 </table>
+                 <hr color="#009578" size=1>
+            </div>
+            
+        </header>  
+        
+        <!--Contenido cambiante-->	
+
+        {% block content %}
+
+        
+        {% endblock %}
+
+        <!--Navegacion-->
+        <nav class = "nav">
+            <a href="{% url 'Usuario' %}" class="nav__link {% if request.path == '/usuario' %} nav__link--active {% endif %}">
+                <i class="material-icons nav__icon"> person </i>
+                <spam class="nav__text">Usuario</spam>
+            </a>
+            <a href="{% url 'Recibo' %}" class="nav__link {% if request.path == '/recibo' %} nav__link--active {% endif %}">
+                <i class="material-icons nav__icon"> euro_symbol </i>
+                <spam class="nav__text">Recibo</spam>
+            </a>
+            <a href="{% url 'Horas' %}" class="nav__link {% if request.path == '/horas' %} nav__link--active {% endif %}">
+                <i class="material-icons nav__icon"> alarm </i>
+                <spam class="nav__text">Horas</spam>
+            </a>
+            <a href="{% url 'Calendario' %}" class="nav__link {% if request.path == '/calendario' %} nav__link--active {% endif %}">
+                <i class="material-icons nav__icon"> calendar_today </i>
+                <spam class="nav__text">Calendario</spam>
+            </a>
+            <a href="{% url 'Convenio' %}" class="nav__link {% if request.path == '/convenio' %} nav__link--active {% endif %}">
+                <i class="material-icons nav__icon"> description </i>
+                <spam class="nav__text">Convenio</spam>
+            </a>
+            <a href="{% url 'Mail' %}" class="nav__link {% if request.path == '/mail' %} nav__link--active {% endif %}">
+                <i class="material-icons nav__icon"> mail </i>
+                <spam class="nav__text">E-mail</spam>
+            </a>
+            
+        </nav>
+    </body>
+</html>
+

@@ -1,0 +1,49 @@
+{% extends "BieleGastosApp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+	<div align="center">
+
+	
+        <table title="Datos_personales">
+  			<tr>
+    			<td>Nombre</td>
+    			<td>{{user.get_short_name}}</td>
+  			</tr>
+  			<tr>
+    			<td>Apellidos</td>
+    			<td>{{user.get_full_name}}</td> {{user.get}}
+  			</tr>
+  			<tr>
+    			<td>E-mail</td>
+    			<td>{{user.get_email}}</td>
+  			</tr>
+			  <tr>
+    			<td>Última Sesion</td>
+    			<td>{{user.last_login}}</td>
+  			</tr>
+  			<tr>
+    			<td>IRPF</td>
+    			<td><input type="number" id="irpf" name="irpf"></td>
+				<td>%</td>
+  			</tr>
+  			<tr>
+    			<td>Reduccion</td>
+    			<td><input type="number" id="reduccion" name="reduccion"></td>
+				<td>%</td>
+  			</tr>
+    
+        </table>
+  			
+	</div>
+	<div align="center">  
+		<p style= "color: red"> <B>NO FUNCIONA EL IRPF NI REDUCCION EN PROCESO DE CONSTRUCCION</B></p>
+        <p>Agradecería que si descubrís algún fallo o mejora envieis un mail con la mejora/fallo para poder avanzar con la página.</p>
+		<br>
+		<p>En versiones anteriores a compañeros se les ha advertido de hasta 400 euros que iban a cobrar de menos.</p>
+		<br>
+		<p>Los gastos y el mail todavia están en proceso de construcción</p>
+
+    </div>
+{% endblock %}

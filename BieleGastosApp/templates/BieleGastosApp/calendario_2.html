@@ -1,0 +1,116 @@
+{% extends "BieleGastosApp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+        <div align="center">
+            <h4> Seleccione el mes:</h4>
+            <label for="mes"></label>
+            <select name="mes"  id="mes">
+                <option>Enero</option>
+                <option>Febrero</option>
+                <option>Marzo</option>
+                <option>Abril</option>
+                <option>Mayo</option>
+                <option>Junio</option>
+                <option>Julio</option>
+                <option>Agosto</option>
+                <option>Septiembre</option>
+                <option>Octubre</option>
+                <option>Noviembre</option>
+                <option>Diciembre</option>
+            </select>
+        </div>
+        <div align="center">
+            <h4> Seleccione el año:</h4>
+            <label for="aino"></label>
+            <select name="aino"  id="mes">
+                <option>2021</option>
+                <option>2021</option>
+
+            </select>  
+        </div>
+        <div align="center">
+            <input type="submit" value="Cargar">
+        </div>
+        <div align="center">
+            <table width="50%" border="0" align="center" id="mes_calendario">
+                <tr>
+                    <th colspan="8">Diciembre 2021</th>
+                </tr>
+                <th>
+                    <td>Lun </td>
+                    <td>Mar </td>
+                    <td>Mie </td>
+                    <td>Jue </td>
+                    <td>Vie </td>
+                    <td>Sab </td>
+                    <td>Dom </td>
+                </th>
+                <tr>
+                    <td>W32</td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td>1 </td>
+                </tr>
+                <tr>
+                    <td>W33</td>
+                    <td>2 </td>
+                    <td>3 </td>
+                    <td>4 </td>
+                    <td>5 </td>
+                    <td>6 </td>
+                    <td>7 </td>
+                    <td>8 </td>
+                </tr>
+                <tr>
+                    <td>W34</td>
+                    <td>9 </td>
+                    <td>10 </td>
+                    <td>11 </td>
+                    <td>12 </td>
+                    <td>13 </td>
+                    <td>14 </td>
+                    <td>15 </td>
+                </tr>
+                <tr>
+                    <td>W35</td>
+                    <td>16 </td>
+                    <td>17 </td>
+                    <td>18 </td>
+                    <td>19 </td>
+                    <td>20 </td>
+                    <td>21 </td>
+                    <td>22 </td>
+                </tr>
+                <tr>
+                    <td>W36</td>
+                    <td>23 </td>
+                    <td>24 </td>
+                    <td>25 </td>
+                    <td>26 </td>
+                    <td>27 </td>
+                    <td>28 </td>
+                    <td>29 </td>
+                </tr>
+                <tr>
+                    <td>W37</td>
+                    <td>30 </td>
+                    <td>31 </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                </tr>
+    
+        
+            </table>  
+
+        </div>
+        
+{% endblock %}

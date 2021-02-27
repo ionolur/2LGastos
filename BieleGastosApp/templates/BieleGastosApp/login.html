@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang= "eu">
+    <head>
+        {% load static %}
+        <meta charset="iso-8559-1"/>
+        <meta name="description" content="Biele Gastuak"/>
+        <meta name="keywords" content="Biele, Gastuak"/>
+        <!-- Mobilentzat neurriak ondo jartzeko -->
+        <meta name="viewport" content="with=device-width, user-scalable=no, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0">
+
+        <title> 
+            2L Gastos
+        </title>
+        <link rel="stylesheet" href="{% static 'BieleGastosApp/css/Estilos_login.css' %}">
+    
+    </head>
+
+    <body> 
+        <div class="login_box"> 
+            <img src="{% static 'BieleGastosApp/img/Logo_Co.png' %}" id="logo_co" class="logo_web">
+            <h3> Su identificaci&oacute;n </h3>
+            <form>   
+                <!-- Username -->
+                <label for="username"> Usuario: </label>
+                <input type="text" placeholder="Dirección de Email" name="direccion"> 
+                <!-- Password -->
+                <label for="username"> Contrase&ntilde;a: </label>
+                <input type="password" placeholder="Contraseña Personal" name="Contraseña">
+            
+                <input type="submit" value="Entrar">
+
+                <a href="{% url 'Usuario' %}" >¿Has perdido la contrase&ntilde;a? </a>
+
+            </form>
+            <img src="{% static 'BieleGastosApp/img/Logo_Co.png' %}" id="logo_co" class="logo_co">
+        </div>
+
+        <p>  </p>
+    </body>
+
+</html>
+

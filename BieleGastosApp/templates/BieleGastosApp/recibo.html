@@ -1,0 +1,30 @@
+{% extends "BieleGastosApp/base.html" %}
+
+{% load static %}
+
+{% block content %} 
+    
+
+    <div align="center">
+        <h4> Seleccione el mes:</h4>
+    </div>
+    <div align="center">
+        <form action="" method="POST" >
+        
+            <table>
+    
+                {{ form.mes}}
+    
+            </table>
+            <input type="submit" value="Imprimir" name="cargar"> {% csrf_token %}
+            
+    
+        </form>
+
+        {{ convenio.extra_normal }}
+
+    </div>
+    
+
+{% endblock %}
+

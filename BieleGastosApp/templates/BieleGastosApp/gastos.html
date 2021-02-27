@@ -1,0 +1,34 @@
+{% extends "BieleGastosApp/base.html" %}
+
+{% load static %}
+
+{% block content %} 
+
+    {% if form.error %}
+    <p style="color: red;">Por revisa este campo</p>
+
+    {% endif %}
+    <div align="center">
+        <form action="" method="POST" >
+        
+            <table>
+    
+                {{ form }}
+    
+            </table>
+            <input type="submit" value="Cargar" name="cargar"> {% csrf_token %}
+            <input type="submit" value="Guardar" name="guardar"> {% csrf_token %}
+            <input type="submit" value="Borrar" name="borrar"> {% csrf_token %}
+            <input type="submit" value="Nuevo" name="nuevo"> {% csrf_token %}
+            
+    
+        </form>
+
+    </div>
+    <div align="center"> 
+        <p style= "color: red " > <B>NO FUNCIONA EN PROCESO DE CONSTRUCCION</B></p>
+    </div>
+    
+    
+
+{% endblock %}

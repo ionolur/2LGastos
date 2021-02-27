@@ -1,0 +1,202 @@
+{% extends "BieleGastosApp/base.html" %}
+
+{% load static %}
+
+{% block content %} 
+    
+
+    <div align="center">
+        <h4> Seleccione el mes:</h4>
+    </div>
+    <div align="center">
+        <form action="" method="POST" >
+        
+            <table>
+    
+                {{ form.mes}}
+    
+            </table>
+            <input type="submit" value="Imprimir"> {% csrf_token %}
+            
+    
+        </form>
+
+    </div>
+    <!-- Mes y Empleado-->
+    <div align="center" width="100%"">
+        <table style="text-align: left;">
+            <tr>
+                <th> Mes</th>
+                <th> Octubre / 2021 </th>
+            </tr>
+
+        </table>
+
+    </div>
+    <!--Plus de productividad-->
+    <div align="center" width="100%"">
+        <table border="1px">
+            <tr style="text-align: left;">
+                <th> CONCEPTO</th>
+                <th> CANTIDAD</th>
+                <th> PRECIO <br> BRUTO </th>
+                <th> TOTAL </th>
+            </tr>
+            <!-- Vacio -->
+            <tr>
+                <th colspan="4"> &nbsp;&nbsp;&nbsp; </th>
+            </tr>   
+            <tr style="text-align: center;">
+                <td style="text-align: left;"> Plus de Productividad - A</td>
+                <td> {{ resultado.Plus_A }} </td>
+                <td> {{ convenio.extra_normal }} </td>
+                <td> {{ resultado.Plus_A_euro }} </td>
+            </tr>
+            <tr style="text-align: center;">
+                <td style="text-align: left;"> Plus de Productividad - B</td>
+                <td> {{ resultado.Plus_B }}</td>
+                <td> {{ convenio.extra_ertain }} </td>
+                <td> {{ resultado.Plus_B_euro }}</td>
+            </tr>
+            <tr style="text-align: center;">
+                <td style="text-align: left;"> Plus de Productividad - C</td>
+                <td> {{ resultado.Plus_C }} </td>
+                <td> {{ convenio.extra_especial }} </td>
+                <td> {{ resultado.Plus_C_euro }}</td>
+            </tr>
+            <tr style="text-align: center;">
+                <th style="text-align: left;" colspan="3">PLUS de PRODUCTIVIDAD </th>
+                <th> {{ resultado.Total_Plus }} </th>
+            </tr>
+            <!-- Vacio -->
+            <tr>
+                <th colspan="4"> &nbsp;&nbsp;&nbsp; </th>
+            </tr>   
+
+            <tr style="text-align: center;">
+                <td style="text-align: left;"> PeM medio día semana (5h)</td>
+                <td>  </td>
+                <td>  </td>
+                <td> 0,0 </td>
+            </tr>
+            <tr style="text-align: center;">
+                <td style="text-align: left;"> PeM día completo semana (10h) </td>
+                <td> {{ resultado.Dia_Normal }}  </td>
+                <td> {{ convenio.dia_trabajo }}</td>
+                <td> {{ resultado.Dia_Normal_euro }}  </td>
+            </tr>
+            <tr style="text-align: center;">
+                <td style="text-align: left;"> PeM medio día viernes especial (5h)</td>
+                <td> </td>
+                <td> </td>
+                <td> 0,0 </td>
+            </tr>
+            <tr style="text-align: center;">
+                <td style="text-align: left;"> PeM día completo viernes especial (10h)</td>
+                <td> {{ resultado.Viernes }}  </td>
+                <td> {{ convenio.viernes }} </td>
+                <td> {{ resultado.Viernes_euro }}  </td>
+            </tr>
+            <tr style="text-align: center;">
+                <td style="text-align: left;"> PeM medio día sábado/puente (5h)</th>
+                <td> {{ resultado.Medio_Sabado}}  </td>
+                <td> {{ convenio.sabado_medio }}  </td>
+                <td> {{ resultado.Medio_Sabado_euro }}  </td>
+            </tr>
+            <tr style="text-align: center;">
+                <td style="text-align: left;"> PeM día completo sábado/puente (10h)</td>
+                <td> {{ resultado.Completo_Sabado}} </td>
+                <td> {{ convenio.sabado_completo }} </td>
+                <td> {{ resultado.Completo_Sabado_euro}} </td>
+            </tr>
+            <tr style="text-align: center;">
+                <td style="text-align: left;"> PeM medio día domingo/festivo (5h)</td>
+                <td> {{ resultado.Medio_Domingo}} </td>
+                <td> {{ convenio.domingo_medio }} </td>
+                <td> {{ resultado.Medio_Domingo_euro}} </td>
+            </tr>
+            <tr style="text-align: center;">
+                <td style="text-align: left;"> PeM día completo domingo/festivo (10h)</td>
+                <td> {{ resultado.Completo_Domingo}} </td>
+                <td> {{ convenio.domingo_completo}} </td>
+                <td> {{ resultado.Completo_Domingo_euro}} </td>
+            </tr>
+            <tr style="text-align: center;">
+                <th style="text-align: left;" colspan="3"> PLUS DE PUESTA EN MARCHA </th>
+                <th> {{ resultado.Total_PeM}} </th>
+            </tr>
+            <!-- Vacio -->
+            <tr>
+                <th colspan="4"> &nbsp;&nbsp;&nbsp; </th>
+            </tr>   
+            <tr style="text-align: center;">
+                <th style="text-align: left;"> PLUS DE DESPLAZAMIENTO</th>
+                <th> {{ resultado.Desplazamiento}} </th>
+                <th> {{ convenio.horas_viaje }}  </th>
+                <th> {{ resultado.Desplazamiento_euro}} </th>
+            </tr>
+            <!-- Vacio -->
+            <tr>
+                <th colspan="4"> &nbsp;&nbsp;&nbsp; </th>
+            </tr>   
+            <tr style="text-align: center;">
+                <td style="text-align: left;"> Estancia - Laborales (hasta 2 semanas) </td>
+                <td> {{ resultado.Pernocta_dia}} </td>
+                <td> {{ convenio.pernocta_normal }} </td>
+                <td> {{ resultado.Pernocta_dia_euro}}  </td>
+            </tr>
+            <tr style="text-align: center;">
+                <td style="text-align: left;"> Estancia - Festivos (hasta 2 semanas)</td>
+                <td> {{ resultado.Pernocta_festivo}} </td>
+                <td> {{ convenio.pernocta_festivo }} </td>
+                <td> {{ resultado.Pernocta_festivo_euro}}  </td>
+            </tr>
+            <tr style="text-align: center;">
+                <td style="text-align: left;"> Estancia - Laborales (3 semanas o más)</td>
+                <td> {{ resultado.Pernocta_dia_sem3}}  </td>
+                <td> {{ convenio.pernocta_normal}} + {{convenio.tercera_semana}}</td>
+                <td> {{ resultado.Pernocta_dia_sem3_euro}}  </td>
+            </tr>
+            <tr style="text-align: center;">
+                <td style="text-align: left;"> Estancia - Festivos (3 semanas o más)</td>
+                <td> {{ resultado.Pernocta_festivo_sem3}}  </td>
+                <td> {{ convenio.pernocta_festivo}} + {{convenio.tercera_semana}} </td>
+                <td> {{ resultado.Pernocta_festivo_sem3_euro}} </td>
+            </tr>
+            <tr style="text-align: center;">
+                <th style="text-align: left;" colspan="3"> PLUS DE ESTANCIA </th>
+                <th> {{ resultado.Total_Pernocta}}  </th>
+            </tr> 
+            <!-- Vacio -->
+            <tr>
+                <th colspan="4"> &nbsp;&nbsp;&nbsp; </th>
+            </tr>   
+            <!-- Kilometros -->
+            <tr style="text-align: center;">
+                <th style="text-align: left;"> KILOMETROS</th>
+                <th> {{ resultado.Kilometros}}  </th>
+                <th> {{ convenio.kilometros }} </th>
+                <th> {{ resultado.Kilometros_euro}}  </th>
+            </tr>
+            <!-- Vacio -->
+            <tr>
+                <th colspan="4"> &nbsp;&nbsp;&nbsp; </th>
+            </tr> 
+            <tr style="text-align: center;">
+                <th style="text-align: left;" colspan="3"> TOTAL (Bruto)</th>
+                <th> {{ resultado.Total_Bruto}} </th>
+            </tr>
+            <tr>
+                <th colspan="4"> &nbsp;&nbsp;&nbsp; </th>
+            </tr> 
+            <tr style="text-align: center;">
+                <th style="text-align: left;" colspan="3"> Horas a deber </th>
+                <th> {{ resultado.Horas_a_Deber}} </th>
+            </tr>
+                
+        </table>
+    
+    </div>
+
+{% endblock %}
+

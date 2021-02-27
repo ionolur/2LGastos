@@ -1,0 +1,98 @@
+ body{
+    margin: 0; 
+    padding: 0;
+    /*background: url(../Imagenes/World_map.png) no-repeat center top;*/
+    background-color: rgb(245,238,224);
+    background-size: cover;
+    font-family: courier;
+    height: 100vh;
+}
+.login_box{
+    width: 320px;
+    height: 520px;
+    background-color: rgb(106,188,184);
+    color: rgb(230,230,230);
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 75px 30PX;
+}
+
+.login_box .logo_co {
+    height: 100px;
+    width: 70px;
+    position: absolute;
+    left: calc(50% - 50px);
+    padding-top: 0px;
+
+    
+}
+
+.login_box .logo_web {
+    height: 150px;
+    width: 150px;
+    position: absolute;
+    top: -75px;
+    border-radius: 50%;
+    left: calc(50% - 75px);
+}
+
+.login_box label {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    display: block;
+}
+
+.login_box input {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.login_box input[type="text"],
+.login_box input[type="password"] {
+    border: none;
+    border-bottom: 1px solid #ffffff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.login_box input[type="submit"]{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: rgba(0,128,128, 0.5);
+    color: #fff;
+    font-size: 18px;
+    border-radius: 30px;
+
+}
+
+.login_box a {
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: darkgrey;
+}
+    
+.boton {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    min-width: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: courier;
+    font-size: 20px;
+    color: #6d3219;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: background-color 0.1s ease-in-out;
+
+}

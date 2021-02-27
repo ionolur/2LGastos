@@ -1,0 +1,78 @@
+
+        {% extends "BieleGastosApp/base.html" %}
+
+        {% load static %}
+
+        {% block content %}
+        <div align="center">
+            <form action="" method="POST" >
+                <table>
+    
+                    {{ calendario.mes }}
+    
+                </table>
+                <input type="submit" value="Cargar" name="cargar"> {% csrf_token %}
+            </form>
+            
+        </div>
+        <div align="center">
+            <table width="50%" border="0" align="center" id="mes_calendario">
+        <th>
+            <td align='center'>Lun </td>
+            <td align='center' >Mar </td>
+            <td align='center'>Mie </td>
+            <td align='center'>Jue </td>
+            <td align='center'>Vie </td>
+            <td align='center'>Sab </td>
+            <td align='center'>Dom </td>
+        </th>
+    <tr>
+	<td> W5</td>
+	<td style='background-color:#E3E3E3' align='center'> 1</td>
+	<td style='background-color:#E3E3E3' align='center'> 2</td>
+	<td style='background-color:#E3E3E3' align='center'> 3</td>
+	<td style='background-color:#E3E3E3' align='center'> 4</td>
+	<td style='background-color:#69BCB8' align='center'> 5</td>
+	<td style='background-color:#AEDE4A' align='center'> 6</td>
+	<td style='background-color:#DE544A' align='center'> 7</td>
+</tr>
+<tr>
+	<td> W6</td>
+	<td style='background-color:#E3E3E3' align='center'> 8</td>
+	<td style='background-color:#E3E3E3' align='center'> 9</td>
+	<td style='background-color:#E3E3E3' align='center'> 10</td>
+	<td style='background-color:#E3E3E3' align='center'> 11</td>
+	<td style='background-color:#69BCB8' align='center'> 12</td>
+	<td style='background-color:#AEDE4A' align='center'> 13</td>
+	<td style='background-color:#DE544A' align='center'> 14</td>
+</tr>
+<tr>
+	<td> W7</td>
+	<td style='background-color:#AEDE4A' align='center'> 15</td>
+	<td style='background-color:#AEDE4A' align='center'> 16</td>
+	<td style='background-color:#E3E3E3' align='center'> 17</td>
+	<td style='background-color:#E3E3E3' align='center'> 18</td>
+	<td style='background-color:#69BCB8' align='center'> 19</td>
+	<td style='background-color:#AEDE4A' align='center'> 20</td>
+	<td style='background-color:#DE544A' align='center'> 21</td>
+</tr>
+<tr>
+	<td> W8</td>
+	<td style='background-color:#E3E3E3' align='center'> 22</td>
+	<td style='background-color:#E3E3E3' align='center'> 23</td>
+	<td style='background-color:#E3E3E3' align='center'> 24</td>
+	<td style='background-color:#E3E3E3' align='center'> 25</td>
+	<td style='background-color:#69BCB8' align='center'> 26</td>
+	<td style='background-color:#AEDE4A' align='center'> 27</td>
+	<td style='background-color:#DE544A' align='center'> 28</td>
+</tr>
+</tr>
+</tr>
+</tr>
+     </table>  
+
+        </div>
+        
+    {% endblock %}
+
+    

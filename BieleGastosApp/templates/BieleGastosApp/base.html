@@ -1,0 +1,76 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'BieleGastosApp/css/nav.css' %}">
+    </style>
+    <title> 2L Gastos </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+</head>
+    <body>
+		<header class="cabecera">
+            <div class="cabecera_1">
+                <a href="{% url 'Usuario' %}" class="nav__link {% if request.path == '/usuario' %} nav__link--active {% endif %}">
+                    <img src="{% static 'BieleGastosApp/icon/usuario.svg' %}" height="24" width="24" />
+                    {{user.get_full_name}}
+                </a>
+
+            </div>
+            <div class="cabecera_2">
+                    <img src="{% static 'BieleGastosApp/img/Logo_web.svg' %}" class="logo_co">
+            </div>
+            <div class="cabecera_3">
+                <a href="{% url 'Mail' %}" class="nav__link {% if request.path == '/mail' %} nav__link--active {% endif %}">
+                    <img src="{% static 'BieleGastosApp/icon/email.svg' %}" height="24" width="24" />
+                    <spam class="nav__text">E-mail</spam>
+                </a> 
+            </div>
+                          
+        
+        </header>  
+        
+        <!--Contenido cambiante-->	
+
+        {% block content %}
+
+        
+        {% endblock %}
+
+        <!--Navegacion-->
+        <nav class = "nav">
+            <a href="{% url 'Recibo' %}" class="nav__link {% if request.path == '/recibo' %} nav__link--active {% endif %}">
+            <!--   <i class="material-icons nav__icon"> euro_symbol </i>-->
+                <img src="{% static 'BieleGastosApp/icon/imprimir.svg' %}" height="24" width="24" />
+                <spam class="nav__text">Recibo</spam>
+            </a>
+            <a href="{% url 'Horas' %}" class="nav__link {% if request.path == '/horas' %} nav__link--active {% endif %}">
+            <!--    <i class="material-icons nav__icon"> alarm </i> -->
+                <img src="{% static 'BieleGastosApp/icon/horas.svg' %}" height="24" width="24" />
+                <spam class="nav__text">Horas</spam>
+            </a>
+            <a href="{% url 'Calendario' %}" class="nav__link {% if request.path == '/calendario' %} nav__link--active {% endif %}">
+            <!--    <i class="material-icons nav__icon"> calendar_today </i> -->
+                <img src="{% static 'BieleGastosApp/icon/calendario.svg' %}" height="24" width="24" />
+                <spam class="nav__text">Calendario</spam>
+            </a>
+            <a href="{% url 'Convenio' %}" class="nav__link {% if request.path == '/convenio' %} nav__link--active {% endif %}">
+            <!--    <i class="material-icons nav__icon"> description </i> -->
+                <img src="{% static 'BieleGastosApp/icon/convenio.svg' %}" height="24" width="24" />
+                <spam class="nav__text">Convenio</spam>
+            </a>
+            <a href="{% url 'Gastos' %}" class="nav__link {% if request.path == '/gastos' %} nav__link--active {% endif %}">
+            <!--   <i class="material-icons nav__icon"> mail </i> -->
+                <img src="{% static 'BieleGastosApp/icon/gastos.svg' %}" height="24" width="24" />
+                <spam class="nav__text">Gastos</spam>
+            </a>
+            
+        </nav>
+    </body>
+</html>
+
