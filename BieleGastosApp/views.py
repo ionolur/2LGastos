@@ -26,10 +26,37 @@ def usuario(request):
     new_form_data = {}
     miUsuario = FormularioUsuario(new_form_data)
     usuario = {}
-    if request.method=='POST': #and ('guardar' in request.POST):
+    print(user)
+    print(user_actual)
+    '''
+    try:
+        usuario = Usuario.objects.get(autor= user)
+        new_form_data = {}
+        new_form_data['irpf'] = usuario.irpf
+        new_form_data['reduccion'] = usuario.reduccion
+        new_form_data['guardar_normal'] = usuario.guardar_normal
+        new_form_data['guardar_ertain'] = usuario.guardar_ertain
+        new_form_data['guardar_berezi'] = usuario.guardar_berezi
+        miUsuario = FormularioUsuario(new_form_data)
+    except Exception as e:
+        
+        print(e)
+        print("No existe datos usuario")
+    
+        new_form_data = {}
+        new_form_data['irpf'] = 0.0
+        new_form_data['reduccion'] = 0.0
+        new_form_data['guardar_normal'] = False
+        new_form_data['guardar_ertain'] = False
+        new_form_data['guardar_berezi'] = False
+        miUsuario = FormularioUsuario(new_form_data)
+    
+
+    if request.method=='POST' and ('guardar' in request.POST):
         miUsuario=FormularioUsuario(request.POST)
+        print(user_actual)
         try:
-            usuario = Usuario.objects.get(autor= user)
+            usuario = Usuario.objects.get(autor= user_actual)
             usuario.irpf = miUsuario.data['irpf']
             usuario.reduccion = miUsuario.data['reduccion']
             usuario.guardar_normal = miUsuario.data['guardar_normal']
@@ -39,15 +66,13 @@ def usuario(request):
             print("Guardado datos usuario")
         except:
             print("Usuario no existe")
-            print(user_actual)
-            print(miUsuario.data['irpf'])
-            print(miUsuario.data['reduccion'])
-            usuario = Usuario.objects.get(autor= user,
+            usuario = Usuario(autor= user,
                                     irpf= miUsuario.data['irpf'],
                                     reduccion = miUsuario.data['reduccion'],
                                     guardar_normal='guardar_normal' in miUsuario.data,
                                     guardar_ertain='guardar_ertain' in miUsuario.data,
-                                    guardar_berezi='guardar_berezi' in miUsuario.data,)                       
+                                    guardar_berezi='guardar_berezi' in miUsuario.data,) 
+            usuario.save()                      
 
         new_form_data = {}
         new_form_data['irpf'] = usuario.irpf
@@ -55,12 +80,9 @@ def usuario(request):
         new_form_data['guardar_normal'] = usuario.guardar_normal
         new_form_data['guardar_ertain'] = usuario.guardar_ertain
         new_form_data['guardar_berezi'] = usuario.guardar_berezi
-
-       
-        miUsuario = FormularioHoras(new_form_data)
-
-    
-    return render(request, "BieleGastosApp/usuario_datos.html", {'usuario': miUsuario})
+        miUsuario = FormularioUsuario(new_form_data)
+    '''
+    return render(request, "BieleGastosApp/usuario_datos.html") #, {'usuario': miUsuario})
 
 def login(request):
     if request.method == "POST":

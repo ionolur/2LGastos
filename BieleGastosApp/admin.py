@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Horas, Calendario, Gastos
+from .models import Horas, Calendario, Gastos, Usuario
 
 # Register your models here.
 
@@ -14,3 +14,7 @@ class CalendarioAdmin(admin.ModelAdmin):
 
 class GastosAdmin (admin.ModelAdmin):
     prepopulated_fields = {'slug': ('autor','dia',)}
+
+@admin.register(Usuario)
+class UsuarioAdmin (admin.ModelAdmin):
+    pass

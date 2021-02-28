@@ -22,7 +22,7 @@
             <form method="POST">
                 {{ form.as_p }}
                 {% csrf_token %}
-                <button type="submit" class="boton">Entrar</button>
+                <button type="submit" class="boton">Entrar</button>{% csrf_token %}
             </form>
             <hr />  
             <img src="{% static 'BieleGastosApp/img/Logo_Co.png' %}" id="logo_co" class="logo_co">
